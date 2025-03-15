@@ -1,0 +1,10 @@
+Module
+  name: game_health
+  description: Displays health, mana points, soul points, and conditions
+  author: Luis
+  website: none
+  sandboxed: true
+  autoload: true
+  scripts: [ health ]
+  @onLoad: init()
+  @onUnload: terminate()

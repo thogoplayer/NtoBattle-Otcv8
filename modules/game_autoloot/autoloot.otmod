@@ -1,0 +1,9 @@
+Module
+  name: game_autoloot
+  description: Adicionar items no auto loot
+  author: Thalles Vitor
+  website: tem nn lek xD
+  sandboxed: true
+  scripts: [ autoloot ]
+  @onLoad: init()
+  @onUnload: terminate()

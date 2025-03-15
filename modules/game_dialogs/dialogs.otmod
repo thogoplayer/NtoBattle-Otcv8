@@ -1,0 +1,9 @@
+Module
+  name: game_dialogs
+  description: Conversa de Diálogo entre o Player com NPC através de uma caixa de diálogos.
+  author: Thalles Vitor
+  website: www.thallesdev.store
+  sandboxed: true
+  scripts: [ dialogs ]
+  @onLoad: init()
+  @onUnload: terminate()

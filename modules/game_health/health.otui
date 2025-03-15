@@ -1,0 +1,166 @@
+HealthBar < ProgressBar
+  background-color: #00e100
+  size: 132 10
+  image-color: alpha
+  text: health
+  height: 11
+  text-align: center
+  text-offset: 1 0
+  border-width: 0
+  margin: 4 0 0 -7
+  
+ExperienceBar < ProgressBar
+  background-color: #d2c157
+  size: 105 5
+  image-color: alpha
+  text: xp
+  height: 8
+  text-align: center
+  text-offset: 1 0
+  border-width: 0
+  margin: 6 0 0 -7
+
+ManaBar < ProgressBar
+  background-color: #00ffff
+  size: 115 10
+  image-color: alpha
+  text: chakra
+  height: 11
+  text-align: center
+  text-offset: 1 0
+  border-width: 0
+  margin: 4 0 0 -7
+
+StmBar < ProgressBar
+  background-color: #e56c00
+  size: 110 5
+  image-color: alpha
+  text: stm
+  height: 8
+  text-align: center
+  text-offset: 1 0
+  border-width: 0
+  margin: 6 0 0 -7
+
+Slot < UIWidget
+  font: terminus-10px
+  color: #e8c05e
+  margin-left: 2
+  icon-align: left
+
+SoulLabel < GameLabel
+  id: soulLabel
+  text-align: right
+  color: white
+  font: verdana-11px-rounded
+  anchors.bottom: parent.bottom
+  anchors.right: parent.right
+  anchors.left: parent.horizontalCenter
+  margin-top: 5
+  margin-right: 3
+  on: true
+
+  $!on:
+    visible: false
+    margin-top: 0
+    height: 0
+
+ConditionWidget < UIWidget
+  size: 18 18
+
+  $!first:
+    margin-left: 2
+
+HeadlessWindow
+  id: healthInfoWindow
+  size: 253 103
+  image-source: img/healthinfo
+  anchors.top: parent.top
+  anchors.left: parent.left
+  margin: 45 0 0 200
+  focusable: false
+
+  Label
+    id: nameLabel
+    anchors.top: parent.top
+    anchors.left: parent.left
+    text-auto-resize: true
+    color: #e64c5f
+    margin: -5 0 0 65
+
+  UIButton
+    id: outfitBox
+    size: 80 80
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin: -4 0 0 -2
+
+  Slot
+    id: levelLabel
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    image-color: #e64c5f
+    margin: -5 0 10 13
+
+  HealthBar
+    id: healthBar
+    anchors.top: nameLabel.bottom
+    anchors.left: outfitBox.right
+
+  Label
+    id: healthLabel
+    font: terminus-10px
+    anchors.top: prev.top
+    anchors.left: prev.right
+    margin: -0 0 0 8
+    text: 100%
+
+  ManaBar
+    id: manaBar
+    anchors.top: healthBar.bottom
+    anchors.left: outfitBox.right
+
+  Label
+    id: manaLabel
+    font: terminus-10px
+    anchors.top: prev.top
+    anchors.left: prev.right
+    margin: -0 0 0 5
+    text: 100%
+
+  ExperienceBar
+    id: experienceBar
+    anchors.top: manaBar.bottom
+    anchors.left: outfitBox.right
+
+  Label
+    id: experienceLabel
+    font: terminus-10px
+    anchors.top: prev.top
+    anchors.left: prev.right
+    margin: -2 0 0 7
+
+
+  StmBar
+    id: stmBar
+    anchors.top: experienceBar.bottom
+    anchors.left: outfitBox.right
+
+  Slot
+    id: capLabel
+    width: 80
+    anchors.top: stmBar.bottom
+    anchors.left: outfitBox.right
+    icon: img/backpack
+    margin: 4 0 0 -4
+
+  Panel
+    id: panelCondition
+    layout:
+      type: horizontalBox
+    height: 22
+    padding: 2
+    margin-top: 2
+    anchors.top: prev.bottom
+    anchors.left: winnerLabel.left
+    anchors.right: parent.right

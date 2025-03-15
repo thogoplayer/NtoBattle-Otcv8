@@ -1,0 +1,80 @@
+DialogButton < UIButton
+  font: terminus-10px
+  color: white
+  size: 106 23
+  text-offset: 0 0
+  image-source: images/button
+  image-color: #dfdfdf
+  image-clip: 0 0 20 20
+  image-border: 3
+  padding: 5 10 5 10
+
+  $hover !disabled:
+    image-clip: 0 20 20 20
+
+  $pressed:
+    image-clip: 0 40 20 20
+    text-offset: 1 1
+
+  $disabled:
+    color: #dfdfdf88
+    opacity: 0.8
+    
+MainWindow
+  id: dialogWindow
+  text: Diálogo de NPCs
+  size: 616 300
+  font: verdana-11px-antialised
+  color: #dfdfdf
+  anchors.centerIn: parent
+
+  UICreature
+    id: npc_outfit
+    size: 90 90
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin: 5 0 0 -20
+
+  Label
+    id: npc_name
+    font: terminus-10px
+    text-auto-resize: true
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 6
+    margin-left: 31
+
+  Label
+    id: npc_dialogText
+    font: terminus-10px
+    text-auto-resize: true
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 30
+    margin-left: 118
+
+  ScrollablePanel
+    id: buttons_list
+    size: 500 75
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 178
+    layout:
+      type: grid
+      cell-size: 99 20
+      spacing: 13
+      flow: true
+    vertical-scrollbar: dialogScrollBar
+
+  VerticalScrollBar
+    id: dialogScrollBar
+    anchors.top: buttons_list.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    margin-top: -23
+    margin-bottom: -1
+    margin-right: 4
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0

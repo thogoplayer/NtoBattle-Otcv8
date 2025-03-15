@@ -1,0 +1,109 @@
+ItemsPanel < Panel
+  layout:
+    type: horizontalBox
+    spacing: 23
+    flow: false
+
+HeadlessWindow
+  id: playertaskWindow
+  size: 991 639
+  image-source: images/background.png
+  anchors.centerIn: parent
+
+  UIButton
+    id: panel_image
+    size: 313 575
+    image-source: images/background_image.png
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-top: 16
+    margin-left: 12
+
+  UIButton
+    id: title_background
+    size: 336 31
+    image-source: images/title.png
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 35
+    margin-left: 470
+
+  UIButton
+    id: points_image
+    size: 120 30
+    image-source: images/point_background.png
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 18
+    margin-left: 338
+
+  Label
+    id: points
+    text: 0
+    text-auto-resize: true
+    color: white
+    anchors.left: points_image.left
+    anchors.top: parent.top
+    margin-left: 41
+    margin-top: 26
+
+  ScrollablePanel
+    id: ranksPanel
+    size: 625 32
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 70
+    margin-left: 340
+    horizontal-scrollbar: ranksScrollBar
+    layout:
+      type: horizontalBox
+      spacing: 5
+      flow: false
+
+  HorizontalScrollBar
+    id: ranksScrollBar
+    anchors.bottom: ranksPanel.bottom
+    anchors.left: ranksPanel.left
+    anchors.right: ranksPanel.right
+    margin-bottom: -20
+    margin-right: -6
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0
+
+  ScrollablePanel
+    id: monsters_hunter
+    size: 627 460
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-top: 126
+    margin-left: 333
+    layout:
+      type: verticalBox
+      spacing: 15
+      flow: false
+    vertical-scrollbar: monstersScrollBar
+
+  VerticalScrollBar
+    id: monstersScrollBar
+    anchors.top: monsters_hunter.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    margin-top: -5
+    margin-bottom: 16
+    margin-right: 8
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0
+
+  UIButton
+    id: closeButton
+    size: 20 21
+    image-source: images/close.png
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 598
+    margin-left: 915
+    @onClick: exibir()

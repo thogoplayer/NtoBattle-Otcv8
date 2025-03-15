@@ -1,0 +1,312 @@
+WindowReloadCharacter < UIWindow
+  id: WindowReloadCharacter
+  image-fixed-ratio: true
+  visible: false
+  anchors.top: parent.top
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.bottom: parent.bottom
+  anchors.centerIn: parent
+  UIWidget
+    background-color: black
+    opacity: 0.5
+    image-fixed-ratio: true
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    anchors.centerIn: parent
+
+  UIWidget
+    id: BackgroundReload
+    size: 425 180
+    image-source: images/reloading/background
+    anchors.centerIn: parent
+
+    UIWidget
+      id: Text
+      size: 336 39
+      anchors.bottom: parent.bottom
+      anchors.centerIn: parent
+      margin-top: 27
+    UIWidget
+      id: Animation
+      size: 165 88
+      anchors.bottom: parent.bottom
+      anchors.centerIn: parent
+      margin-bottom: 35
+      margin-right: 6
+
+    UIWidget
+      id: LoadingBarTime
+      size: 1 26
+      image-source: images/reloading/loadingbar_time
+      anchors.bottom: parent.bottom
+      anchors.centerIn: parent
+      margin-top: 60
+    UIWidget
+      id: LoadingBarBorder
+      size: 325 26
+      image-source: images/reloading/loadingbar_border
+      anchors.bottom: parent.bottom
+      anchors.centerIn: parent
+      margin-top: 60
+
+Panel
+  id: background
+  image-source: /images/background
+  image-smooth: true
+  image-fixed-ratio: true
+  anchors.top: parent.top
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.bottom: parent.bottom
+  margin-top: 1
+  focusable: false
+
+  UILabel
+    id: clientVersionLabel
+    image-source: ~
+    opacity: 0.4
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    text-align: center
+    text-auto-resize: true
+    width: 120
+    padding: 2
+    font: verdana-11px-monochrome
+
+
+//BACKGROUND SLIDE
+  UIWidget
+    id: BckgroundSLIDE
+    image-source: images/background
+    size: 537 294
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 50
+    margin-left: 10
+
+  UIWidget
+    id: ImageSLIDE
+    image-source: images/slide/image_1
+    size: 508 197
+    anchors.top: parent.top
+    anchors.left: BckgroundSLIDE.left
+    margin-top: 65
+    margin-left: 15
+  UIWidget
+    id: TextSLIDE
+    image-source: images/slide/text_1
+    size: 500 58
+    anchors.top: parent.top
+    anchors.left: BckgroundSLIDE.left
+    margin-top: 267
+    margin-left: 16
+  
+  UIWidget
+    id: BallSelect1
+    @onClick: slide1()
+    image-source: images/slide/ball_white
+    size: 15 16
+    anchors.top: BckgroundSLIDE.top
+    anchors.right: BckgroundSLIDE.right
+    margin-top: 220
+    margin-right: 87
+  UIWidget
+    id: BallSelect2
+    @onClick: slide2()
+    image-source: images/slide/ball_transparent
+    size: 15 16
+    anchors.top: BckgroundSLIDE.top
+    anchors.right: BckgroundSLIDE.right
+    margin-top: 220
+    margin-right: 65
+  UIWidget
+    id: BallSelect3
+    @onClick: slide3()
+    image-source: images/slide/ball_transparent
+    size: 15 16
+    anchors.top: BckgroundSLIDE.top
+    anchors.right: BckgroundSLIDE.right
+    margin-top: 220
+    margin-right: 43
+  UIWidget
+    id: BallSelect4
+    @onClick: slide4()
+    image-source: images/slide/ball_transparent
+    size: 15 16
+    anchors.top: BckgroundSLIDE.top
+    anchors.right: BckgroundSLIDE.right
+    margin-top: 220
+    margin-right: 21
+
+//BACKGROUND SLIDE
+//BACKGROUND LOG ATT
+  UIWidget
+    //background de log
+    id: BckgroundLOG
+    image-source: images/background_log
+    size: 772 303
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 700
+    margin-left: 10
+
+    ScrollableFlatPanel
+      id: ownDexContainer
+      image-source: ~
+      anchors.bottom: parent.bottom
+      anchors.top: parent.top
+      anchors.right: parent.right
+      anchors.left: parent.left
+      margin-top: 55
+      margin-bottom: 4
+      margin-left: 12
+      margin-right: 8
+      padding: 0
+      vertical-scrollbar: ownDexScrollBar
+//POSTS LOG
+      UIButton
+        //text 1
+        image-source: images/log/text_1
+        size: 772 241
+        anchors.top: parent.top
+        anchors.left: parent.left
+        margin-top: -2
+        margin-left: -7
+
+      UIButton
+        //text 2
+        image-source: images/log/text_2
+        size: 772 241
+        anchors.top: parent.top
+        anchors.left: parent.left
+        margin-top: 175
+        margin-left: -7
+
+//POSTS LOG
+//SCROLLBAR
+    VerticalScrollBar
+      id: ownDexScrollBar
+      anchors.top: ownDexContainer.top
+      anchors.bottom: ownDexContainer.bottom
+      anchors.right: ownDexContainer.right
+      margin-top: 4
+      margin-bottom: 4
+      margin-right: 2
+      step: 36
+      pixels-scroll: true
+      $!on:
+        width: 15
+//SCROLLBAR
+  UIWidget
+    //Title
+    id: TitleLog
+    image-source: images/log/title
+    size: 772 48
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 700
+    margin-left: 10
+
+//BACKGROUND LOG ATT
+
+  UIWidget
+    //Facebook
+    id: Facebook
+    !tooltip: tr('Facebook')
+    image-source: images/social/facebook
+    size: 62 68
+    opacity: 0.8
+    anchors.top: BckgroundSLIDE.top
+    anchors.left: BckgroundSLIDE.right
+    margin-top: 10
+    margin-left: -0
+    opacity: 0.8
+
+    $hover:
+      opacity: 1
+
+    $pressed:
+      opacity: 0.9
+    @onClick: os.execute("start https://www.facebook.com/ntobattle.com.br")
+  UIWidget
+    //Youtube
+    id: Youtube
+    !tooltip: tr('Youtube')
+    image-source: images/social/youtube
+    size: 62 68
+    opacity: 0.8
+    anchors.top: BckgroundSLIDE.top
+    anchors.left: BckgroundSLIDE.right
+    margin-top: 80
+    margin-left: -0
+    opacity: 0.8
+
+    $hover:
+      opacity: 1
+
+    $pressed:
+      opacity: 0.9
+    @onClick: os.execute("start http://www.ntobattle.com.br/")
+  UIWidget
+    //Instagram
+    id: Instagram
+    !tooltip: tr('Instagram')
+    image-source: images/social/instagram
+    size: 62 68
+    opacity: 0.8
+    anchors.top: BckgroundSLIDE.top
+    anchors.left: BckgroundSLIDE.right
+    margin-top: 150
+    margin-left: -0
+    opacity: 0.8
+
+    $hover:
+      opacity: 1
+
+    $pressed:
+      opacity: 0.9
+    @onClick: os.execute("start http://www.ntobattle.com.br/")
+  UIWidget
+    //Discord
+    id: Discord
+    !tooltip: tr('Discord')
+    image-source: images/social/discord
+    size: 62 68
+    opacity: 0.8
+    anchors.top: BckgroundSLIDE.top
+    anchors.left: BckgroundSLIDE.right
+    margin-top: 220
+    margin-left: -0
+    opacity: 0.8
+
+    $hover:
+      opacity: 1
+
+    $pressed:
+      opacity: 0.9
+    @onClick: os.execute("start https://discord.gg/hzHjrztct9")
+  UIWidget
+    //Janela Preta
+    id: blackWindow
+    visible: false
+    opacity: 0.5
+    background-color: black
+    anchors.top: parent.top
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+
+  UIWidget
+    //Logo centro
+    id: logoAccount
+    image-source: images/logo
+    visible: false
+    size: 446 186
+    anchors.top: parent.top
+    anchors.centerIn: parent
+    margin-top: -220
+
+  WindowReloadCharacter

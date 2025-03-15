@@ -1,0 +1,187 @@
+{
+  "autoHealthItemPanel1": {
+    "max": 75,
+    "enabled": false,
+    "min": 0,
+    "item": 9625
+  },
+  "autoHelpMessage": "hi",
+  "combobot": {
+    "attackSpellEnabled": false,
+    "attackLeaderTargetEnabled": false,
+    "onShootEnabled": false,
+    "serverTriggers": true,
+    "serverLeaderTarget": false,
+    "serverEnabled": false,
+    "commandsEnabled": true,
+    "attack": "",
+    "onSayEnabled": false,
+    "sayLeader": "",
+    "spell": "",
+    "shootLeader": "",
+    "attackItemToggle": false,
+    "item": 3155,
+    "onCastEnabled": false,
+    "sayPhrase": "",
+    "followLeaderEnabled": false,
+    "serverLeader": "",
+    "enabled": false,
+    "follow": "",
+    "castLeader": ""
+  },
+  "_macros": {
+    "": false,
+    "Sense Target": false,
+    "Anti Paralyze": false,
+    "Buff": false,
+    "Eat Food": false,
+    "Combo": false,
+    "faster healing": false,
+    "Monstro Hp %": false,
+    "Follow Attack": false,
+    "Auto Haste": false,
+    "Money": false,
+    "Bug Map": false,
+    "Auto Save": false,
+    "virar target": false,
+    "Dance": false
+  },
+  "isUsing": false,
+  "ingame_hotkeys": "macro(1, 'virar target', function()\n if not g_game.isAttacking() then return end\n local tt = g_game.getAttackingCreature()\n local tx = tt:getPosition().x\n local ty = tt:getPosition().y\n local dir = player:getDirection()\n local tdx = math.abs(tx-pos().x)\n local tdy = math.abs(ty-pos().y)\n if (tdy >= 2 and tdx >= 2) or tdx > 7 or tdy > 7 then return end \n if tdy >= tdx then\n  if ty > pos().y then\n   if dir ~= 2 then\n    return turn(2)\n   end\n  else\n   if dir ~= 0 then\n    return turn(0)\n   end\n  end\n else\n  if tx > pos().x then\n   if dir ~= 1 then\n    return turn(1)\n   end\n  else\n   if dir ~= 3 then\n    return turn(3)\n   end\n  end\n end\nend)\n\nlocal healingSpell = 'Big Regeneration'\nlocal hpPercent = 80\nmacro(50, \"faster healing\",  function()\n  if (hppercent() <= hpPercent) then\n    say(healingSpell) \n  end\nend)\n\nbuffs= macro(1000, \"Buff\", function()\nif not hasPartyBuff() and not isInPz() then\n say(storage.buff)\nschedule(1200, function() say(storage.buff2) end)\nend\nend)\n\naddIcon(\"Buff\", {outfit={mount=849,feet=10,legs=10,body=178,type=85,auxType=0,addons=3,head=48}, text=\"Buff\"},buffs)\n\n\naddTextEdit(\"buff\", storage.buff or \"buff\", function(widget, text) storage.buff = text\nend)\n\n        color= UI.Label(\"Buff 2:\",hpPanel4)\ncolor:setColor(\"green\")\n\n\naddTextEdit(\"buff2\", storage.buff2 or \"buff 2\", function(widget, text) storage.buff2 = text\nend)\n\nmacro(60000, \"Auto Save\", function()\n  say('!save')\nend)\n\nlocal dash, distancia = false, 2\naddIcon(\"SetOnOff\", {item={id=10765, count=1}, switchable=true}, function(widget, enabled)\n  if enabled then dash = true else dash = false end\nend)\n\naddIcon(\"SetDistance\", {text=\"Dist = \"..distancia, switchable=true}, function(widget, enabled)\n  distancia = (distancia == 7 and 2 or distancia + 1)\n  info(distancia)\nend)\n\nonKeyPress(function(keys)\n    local c = {\n        ['W'] = {0, -5}, ['D'] = {5, 0}, ['S'] = {0, 5}, ['A'] = {-5, 0},\n        ['Up'] = {0, -5}, ['Right'] = {5, 0}, ['Down'] = {0, 5}, ['Left'] = {-5, 0},\n    }\n    if dash and c[keys] ~= nil then\n        local posJogador = player:getPosition()\n        posJogador.x = posJogador.x + c[keys][1]\n        posJogador.y = posJogador.y + c[keys][2]\n        local verificarPiso = g_map.getTile(posJogador)\n        if verificarPiso then\n            local usarDash = verificarPiso:getTopUseThing()\n            if usarDash then\n                g_game.use(usarDash)\n            end\n        end\n    end\nend)\nUI.Separator()",
+  "Combo3Text": "",
+  "Combo5Text": "",
+  "autofollow": {
+    "player": ""
+  },
+  "buff": "Susanoo",
+  "ComboText": "",
+  "advancedFriendHealer": {
+    "spellHeal": true,
+    "minFriendHp": 40,
+    "id": 3160,
+    "minMana": 60,
+    "distance": 8,
+    "itemHeal": true,
+    "spellName": "exura sio"
+  },
+  "Combo1Text": "",
+  "autoManaItemPanel1": {
+    "max": 60,
+    "item": 0,
+    "min": 0
+  },
+  "buff2": "",
+  "_icons": {
+    "SetDistance": {
+      "y": 0.071830985915493,
+      "enabled": false,
+      "x": 0.053450608930988
+    },
+    "SetOnOff": {
+      "y": 0.10985915492958,
+      "enabled": false,
+      "x": 0.018267929634641
+    },
+    "buffz": {
+      "y": 0.0014084507042254,
+      "enabled": false,
+      "x": 0.039242219215156
+    },
+    "Buff": {
+      "y": 0,
+      "enabled": false,
+      "x": 0.0094722598105548
+    },
+    "Combo": {
+      "y": 0.17887323943662,
+      "enabled": false,
+      "x": 0.010148849797023
+    },
+    "Sense": {
+      "y": 0.16478873239437,
+      "enabled": false,
+      "x": 0.049391069012179
+    }
+  },
+  "_configs": {
+    "targetbot_configs": {
+      "selected": "kekei_lizard",
+      "enabled": true
+    },
+    "cavebot_configs": {
+      "selected": "okami",
+      "enabled": false
+    }
+  },
+  "Combo4Text": "",
+  "Combo2Text": "",
+  "manatrainer": {
+    "max": 90,
+    "title": "mana%",
+    "min": 0,
+    "on": false,
+    "text": "chakra down"
+  },
+  "autoHasteText": "Concentrate Chakra Feet",
+  "autoHealthPanel1": {
+    "max": 90,
+    "enabled": false,
+    "item": 266,
+    "min": 0,
+    "text": "big regeneration"
+  },
+  "autoHealthItemPanel2": {
+    "max": 65,
+    "enabled": false,
+    "min": 0,
+    "item": 9447
+  },
+  "healing4": {
+    "max": 50,
+    "title": "HP%",
+    "min": 0,
+    "on": false,
+    "text": "fuga"
+  },
+  "alarms": {
+    "playerDetected": false,
+    "creatureDetected": false,
+    "manaValue": 50,
+    "playerAttack": false,
+    "manaBelow": false,
+    "privateMessage": false,
+    "healthValue": 40,
+    "enabled": false,
+    "playerDetectedLogout": false,
+    "healthBelow": false
+  },
+  "playerList": {
+    "enemyList": [
+
+    ],
+    "outfits": false,
+    "groupMembers": true,
+    "friendList": [
+
+    ],
+    "blackList": [
+
+    ],
+    "marks": false
+  },
+  "autoAntiParalyzeText": "Concentrate Chakra Feet",
+  "autoTradeMessage": "hi ",
+  "foodItems": [
+    {
+      "count": 6,
+      "id": 3582
+    }
+  ],
+  "healing3": {
+    "max": 90,
+    "title": "HP%",
+    "min": 51,
+    "on": false,
+    "text": "fuga"
+  }
+}

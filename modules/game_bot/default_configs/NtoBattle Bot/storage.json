@@ -1,0 +1,385 @@
+{
+  "rope": 9596,
+  "castle": {
+    "enabled": false,
+    "id": 3031,
+    "around": false
+  },
+  "supplyRetries": 0,
+  "monsterKill": {
+    "min": false
+  },
+  "foodItems": [
+    {
+      "count": 1,
+      "id": 3577
+    }
+  ],
+  "killSteal": {
+    "setting": false,
+    "enabled": false,
+    "hp": 95,
+    "id": 3260
+  },
+  "healbot": {
+    "spellTable": [
+
+    ],
+    "enabled": false,
+    "itemTable": [
+
+    ]
+  },
+  "Combo1Text": "",
+  "supplies": {
+    "imbues": false,
+    "runeBp": 0,
+    "item2Min": 0,
+    "item3Min": 0,
+    "item1Min": 0,
+    "ammoBp": 0,
+    "sortSupplies": false,
+    "item2Max": 0,
+    "item6Max": 0,
+    "item6Min": 0,
+    "potionBp": 0,
+    "SoftBoots": false,
+    "item5Max": 0,
+    "item1": 0,
+    "item6": 0,
+    "item5Min": 0,
+    "item4Max": 0,
+    "capValue": 0,
+    "item4Min": 0,
+    "item3Max": 0,
+    "staminaSwitch": false,
+    "item5": 0,
+    "staminaValue": 900,
+    "capSwitch": false,
+    "item2": 0,
+    "item1Max": 0,
+    "item3": 0,
+    "item4": 0
+  },
+  "autoHelpMessage": "hi",
+  "shovel": 9596,
+  "buySuppliesCap": 0,
+  "jewelleryEquipper": {
+    "pzCheck": false,
+    "ringMin": 69,
+    "valueAmmy": false,
+    "ringEnabled": false,
+    "ammyEnabled": false,
+    "ammyMin": 100,
+    "ringMax": 100,
+    "valueRing": false,
+    "ringId": 3048,
+    "ringValue": "HP",
+    "ammyId": 3073,
+    "ammySwitch": true,
+    "ringSwitch": true,
+    "ammyMax": 100,
+    "ammyValue": "HP"
+  },
+  "machete": 9596,
+  "attackbot": {
+    "attackTable": [
+      {
+        "attack": "chakra down",
+        "category": 3,
+        "model": 2,
+        "dist": 2,
+        "pvp": true,
+        "manaCost": 100,
+        "enabled": true,
+        "index": 1,
+        "minMonsters": 100
+      }
+    ],
+    "pvpMode": false,
+    "pvpSafe": true,
+    "enabled": false,
+    "ignoreMana": true
+  },
+  "scythe": 9596,
+  "Combo5Text": "Raikiri",
+  "ConditionPanel": {
+    "cureBurn": false,
+    "curseCost": 80,
+    "electrifyCost": 22,
+    "ignoreInPz": true,
+    "bleedCost": 45,
+    "cureCurse": false,
+    "holdHaste": false,
+    "curePosion": false,
+    "hasteSpell": "utani hur",
+    "cureParalyse": false,
+    "stopHaste": false,
+    "cureBleed": false,
+    "holdUtura": false,
+    "paralyseSpell": "utani hur",
+    "utanaCost": 440,
+    "uturaType": "",
+    "poisonCost": 20,
+    "utamoCost": 40,
+    "enabled": false,
+    "uturaCost": 100,
+    "cureElectrify": false,
+    "holdUtamo": false,
+    "paralyseCost": 40,
+    "hasteCost": 40,
+    "holdUtana": false,
+    "burnCost": 30
+  },
+  "isUsing": false,
+  "posCheckRetries": 0,
+  "advancedFriendHealer": {
+    "itemHeal": false,
+    "minFriendHp": 40,
+    "id": 3160,
+    "minMana": 60,
+    "distance": 8,
+    "spellHeal": false,
+    "spellName": "exura sio"
+  },
+  "autoAntiParalyzeText": "Concentrate Chakra Feet",
+  "autoTradeMessage": "hi",
+  "alarms": {
+    "playerDetected": false,
+    "healthValue": 35,
+    "healthBelow": false,
+    "playerAttack": false,
+    "privateMessage": false,
+    "manaValue": 50,
+    "manaBelow": false,
+    "messageText": "",
+    "playerDetectedLogout": false,
+    "enabled": false,
+    "creatureDetected": false,
+    "bossName": ""
+  },
+  "stopSearch": false,
+  "autoHealthItemPanel1": {
+    "max": 55,
+    "item": 10722,
+    "min": 0,
+    "enabled": true
+  },
+  "lootContainerOpen": false,
+  "BotServerChannel": "4478866506224",
+  "combobot": {
+    "attackSpellEnabled": false,
+    "attackLeaderTargetEnabled": true,
+    "onShootEnabled": true,
+    "item": 3155,
+    "serverLeaderTarget": false,
+    "onCastEnabled": false,
+    "serverEnabled": false,
+    "attack": "LEADER TARGET",
+    "onSayEnabled": false,
+    "sayLeader": "",
+    "spell": "",
+    "shootLeader": "Ruisu",
+    "attackItemToggle": false,
+    "followLeaderEnabled": true,
+    "commandsEnabled": true,
+    "sayPhrase": "",
+    "serverTriggers": false,
+    "serverLeader": "",
+    "enabled": false,
+    "follow": "LEADER",
+    "castLeader": ""
+  },
+  "antiPushPanel": {
+    "lastItem": 2,
+    "enabled": false,
+    "items": [
+      3031,
+      3035,
+      0,
+      0,
+      0
+    ]
+  },
+  "_macros": {
+    "": false,
+    "Buff": false,
+    "Money": true,
+    "equip set 1": false,
+    "Click ReUse": false,
+    "Auto Haste": true,
+    "Stake Bodies": false,
+    "UP": false,
+    "Pull Nearby Items": false,
+    "Puxar itens": false,
+    "equip set 2": false,
+    "mwall on target": false,
+    "mwall step": false,
+    "Combo": true,
+    "Bug Map": true,
+    "Monstro Hp %": false,
+    "F2": false,
+    "f2": false,
+    "xD": false,
+    "Eat Food": true,
+    "Auto Target": true,
+    "Sense Target": false,
+    "Dance": true
+  },
+  "lootStatus": "",
+  "killedCreatures": [
+
+  ],
+  "pushmax": {
+    "pushMaxRuneId": 3031,
+    "mwallBlockId": 3031,
+    "pushDelay": 800,
+    "enabled": false,
+    "pushMaxKey": "PageUp"
+  },
+  "trashItems": [
+    {
+      "id": 283,
+      "count": 1
+    },
+    {
+      "id": 284,
+      "count": 1
+    },
+    {
+      "id": 285,
+      "count": 1
+    }
+  ],
+  "sellAllCap": 0,
+  "autofollow": {
+    "player": "name"
+  },
+  "ComboText": "",
+  "autoHealthPanel1": {
+    "max": 98,
+    "item": 107,
+    "enabled": true,
+    "min": 20,
+    "text": "big regeneration"
+  },
+  "Combo4Text": "Raijin Kunai",
+  "healing4": {
+    "max": 50,
+    "title": "HP%",
+    "on": false,
+    "min": 0,
+    "text": "fuga"
+  },
+  "inboxContainerOpen": false,
+  "_configs": {
+    "targetbot_configs": {
+      "selected": "others",
+      "enabled": false
+    },
+    "cavebot_configs": {
+      "selected": "Lizard",
+      "enabled": false
+    }
+  },
+  "_icons": {
+    "X_X": {
+      "y": 0.27581329561528,
+      "x": 0,
+      "enabled": true
+    },
+    "Sense": {
+      "y": 0.20671140939597,
+      "x": 0,
+      "enabled": false
+    },
+    "buffz": {
+      "y": 0.31275167785235,
+      "x": 0,
+      "enabled": false
+    },
+    "Combo": {
+      "y": 0.10469798657718,
+      "x": 0,
+      "enabled": true
+    },
+    "xD": {
+      "y": 0.38048090523338,
+      "x": 0,
+      "enabled": false
+    },
+    "UP": {
+      "y": 0.17114568599717,
+      "x": 0,
+      "enabled": false
+    }
+  },
+  "ingame_hotkeys": "",
+  "Combo2Text": "",
+  "serverMembers": "[\"Deppy\"]",
+  "autoHasteText": "Concentrate Chakra Feet",
+  "BOTserver": {
+    "manaInfo": true,
+    "mwallInfo": true,
+    "mwalls": [
+
+    ]
+  },
+  "manatrainer": {
+    "max": 90,
+    "title": "mana%",
+    "on": false,
+    "min": 0,
+    "text": "chakra down"
+  },
+  "autoEquip": [
+    {
+      "item1": 10588,
+      "title": "Auto Equip",
+      "item2": 0,
+      "on": false,
+      "slot": 8
+    },
+    {
+      "item1": 10586,
+      "title": "Auto Equip",
+      "item2": 0,
+      "on": false,
+      "slot": 4
+    }
+  ],
+  "autoManaItemPanel1": {
+    "max": 60,
+    "item": 0,
+    "min": 0
+  },
+  "playerList": {
+    "enemyList": [
+
+    ],
+    "outfits": false,
+    "friendList": [
+
+    ],
+    "groupMembers": false,
+    "marks": false,
+    "blackList": [
+
+    ]
+  },
+  "buff": "Susanoo Bijuus Control",
+  "Combo3Text": "",
+  "autoHealthItemPanel2": {
+    "max": 60,
+    "item": 10721,
+    "min": 0,
+    "enabled": true
+  },
+  "healing3": {
+    "max": 90,
+    "title": "HP%",
+    "on": false,
+    "min": 51,
+    "text": "fuga"
+  }
+}

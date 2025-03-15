@@ -1,0 +1,68 @@
+TargetBotLootingPanel < Panel
+  layout:
+    type: verticalBox
+    fit-children: true
+
+  HorizontalSeparator
+    margin-top: 5
+
+  Label
+    margin-top: 5
+    text: Itens do Loot
+    color: yellow
+    text-align: center    
+
+  BotContainer
+    id: items
+    margin-top: 3
+  
+  BotSwitch
+    id: everyItem
+    !text: tr("Pegar Todos os Loot")
+    margin-top: 2
+
+  Label
+    margin-top: 5
+    text: Bag
+    color: yellow
+    text-align: center
+
+  BotContainer
+    id: containers
+    margin-top: 3
+    height: 45
+  
+  Panel
+    id: maxDangerPanel
+    height: 20
+    margin-top: 5
+    
+    Label
+      id: value
+      anchors.right: parent.right
+      anchors.top: parent.top
+      anchors.bottom: parent.bottom
+      margin-right: 6
+      width: 880
+
+
+  Panel
+    id: minCapacityPanel
+    height: 20
+    margin-top: 3
+    
+    Label
+      id: value
+      anchors.right: parent.right
+      anchors.top: parent.top
+      anchors.bottom: parent.bottom
+      margin-right: 6
+      width: 880
+
+
+
+  Label
+    margin-top: 3
+    margin-left: 20
+    margin-right: 20
+    

@@ -1,0 +1,9 @@
+Module
+  name: game_playertask
+  description: Sistema de Task para matar X monstros, ao atingir determinado ponto sobe para o proximo ranking
+  author: Thalles Vitor
+  website: https://www.thallesdev.com
+  sandboxed: true
+  scripts: [ playertask ]
+  @onLoad: init()
+  @onUnload: terminate()

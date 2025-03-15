@@ -1,0 +1,11 @@
+Module
+  name: game_shaders
+  description: game shaders
+  author: Arcane#9675
+  website: 
+  autoload: true
+  autoload-priority: 1000
+  scripts: [ shaders.lua ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

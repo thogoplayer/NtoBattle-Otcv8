@@ -1,0 +1,10 @@
+Module
+  name: game_bossbar
+  description: Boss Bar
+  author: Oen
+  website: None
+  sandboxed: true
+  autoload: true
+  scripts: [ bossbar ]
+  @onLoad: init()
+  @onUnload: terminate()

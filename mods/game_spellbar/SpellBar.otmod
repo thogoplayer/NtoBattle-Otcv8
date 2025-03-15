@@ -1,0 +1,13 @@
+Module
+  name: Spell Bar 2.0
+  description: Spell Bar - Draky Lucas
+  author: DrakyLucas
+  website: www.xtibia.com
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ SpellBar ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()

@@ -1,0 +1,153 @@
+SlotOutfit < UIWidget
+  id: slotOutfit
+  size: 155 155
+  phantom: true
+
+  UIWidget
+    id: circle
+    size: 155 155
+    anchors.centerIn: parent
+    phantom: true
+
+  UICreature
+    id: outfit
+    size: 65 65
+    anchors.centerIn: prev
+    margin: 0 15 22 0
+    phantom: true
+
+CharacterWidget < UIWidget
+  height: 42
+  background-color: alpha
+  &updateOnStates: |
+    function(self)
+      local children = self:getChildren()
+      for i=1,#children do
+        children[i]:setOn(self:isFocused())
+      end
+    end
+  @onFocusChange: self:updateOnStates()
+  @onSetup: self:updateOnStates()
+
+  $focus:
+    background-color: #ffffff22
+
+  Label
+    id: name
+    color: #aaaaaa
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter					 
+    text-auto-resize: true
+    background-color: alpha
+    text-offset: 2 0
+    margin-top: 5
+
+    $on:
+      color: #e2bb5b
+
+  Label
+    id: worldName
+    color: #aaaaaa
+    anchors.top: prev.bottom
+    anchors.horizontalCenter: parent.horizontalCenter
+    margin-top: 2								 
+    text-auto-resize: true
+    background-color: alpha
+    &baseText: '(%s)'
+
+    $on:
+      color: #e2bb5b
+
+MainWindow
+  id: charactersWindow
+  size: 680 310
+  !text: tr('Character List')
+  visible: false				  
+  @onEnter: CharacterList.doLogin()
+  @onEscape: CharacterList.hide(true)
+  @onSetup: |
+    g_keyboard.bindKeyPress('Up', function() self:getChildById('characters'):focusPreviousChild(KeyboardFocusReason) end, self)
+    g_keyboard.bindKeyPress('Down', function() self:getChildById('characters'):focusNextChild(KeyboardFocusReason) end, self)
+  TextList
+    size: 198 110
+    id: characters							 
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom											
+    margin-top: 8
+    padding: 1
+    focusable: false
+    vertical-scrollbar: characterListScrollBar
+    auto-focus: first
+
+  VerticalScrollBar
+    id: characterListScrollBar
+    anchors.top: prev.top
+    anchors.bottom: prev.bottom
+    anchors.left: prev.right
+    pixels-scroll: true
+
+  SlotOutfit
+    anchors.left: prev.right
+    anchors.verticalCenter: prev.verticalCenter
+    margin: 4
+    fixed-creature-size: true
+
+  Label
+    id: accountStatusCaption
+    !text: tr('Account Status') .. ':'
+    color: #ffffff
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: 1
+    margin-left: 225
+
+  Label
+    id: accountStatusLabel
+    !text: tr('Free Account')
+    color: #ffffff
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: 24
+    margin-left: 225
+    margin-right: 1
+
+    $on:
+      color: #FF0000
+
+  HorizontalSeparator
+    id: separator
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin-bottom: -50
+
+  //CheckBox
+  //  id: charAutoLoginBox
+  //  !text: tr('Auto login')
+  //  !tooltip: tr('Auto login selected character on next charlist load')
+  //  anchors.left: parent.left
+  //  anchors.right: parent.right
+  //  anchors.bottom: next.top
+  //  margin-bottom: 6
+  //  margin-left: 18
+  //  margin-right: 18
+
+  Button
+    id: buttonOk
+    !text: tr('Ok')
+    width: 86
+    anchors.right: next.left
+    anchors.bottom: parent.bottom
+    margin-right: 10
+    @onClick: CharacterList.doLogin()
+
+  Button
+    id: buttonCancel
+    !text: tr('Cancel')
+    width: 86
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    @onClick: CharacterList.hide(true)

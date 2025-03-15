@@ -1,0 +1,9 @@
+Module
+  name: game_house
+  description: Caixa para mostrar informacoes da house
+  author: Thalles Vitor
+  website: www.thallesdev.store
+  sandboxed: true
+  scripts: [ house ]
+  @onLoad: init()
+  @onUnload: terminate()

@@ -1,0 +1,152 @@
+MainWindow
+  id: houseWindow
+  text-offset: 40 5
+  text-align: topLeft
+  color: #e8c05e
+  font: sans-bold-16px
+  text: Teste
+  size: 337 215
+  image-source: images/window
+  anchors.centerIn: parent
+
+  Label
+    id: owner
+    color: #e8c05e
+    text-auto-resize: true
+    text: Proprietário:
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 22
+    margin-left: 10
+
+  Label
+    id: owner_name
+    color: white
+    text-auto-resize: true
+    text: -
+    anchors.top: owner.top
+    anchors.left: owner.left
+    margin-top: 0
+    margin-left: 77
+
+  Label
+    id: beds
+    color: #e8c05e
+    text-auto-resize: true
+    text: Camas:
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 47
+    margin-left: 10
+
+  Label
+    id: beds_count
+    color: white
+    text-auto-resize: true
+    text: 0
+    anchors.top: beds.top
+    anchors.left: beds.left
+    margin-top: 0
+    margin-left: 44
+
+  Label
+    id: price
+    color: #e8c05e
+    text-auto-resize: true
+    text: Preço:
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 69
+    margin-left: 10
+
+  Label
+    id: price_required
+    color: white
+    text-auto-resize: true
+    text: 0
+    anchors.top: price.top
+    anchors.left: price.left
+    margin-top: 0
+    margin-left: 39
+
+  UIButton
+    id: close
+    text-align: center
+    text-offset: 2 2
+    color: #e8c05e
+    text: Fechar
+    image-source: images/button
+    size: 91 41
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 133
+    margin-left: 97
+    @onClick: naoexibir()
+
+    $hover:
+      image-source: images/button_hover
+
+  UIButton
+    id: buy_house
+    tooltip: Comprar esta casa
+    size: 100 30
+    icon-size: 100 30
+    icon: images/buyhouse_button
+    icon-offset: 9 14
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 43
+    margin-left: 200
+    @onClick: g_game.talk("!buyhouse")
+
+  UIButton
+    id: invite_houseBtn
+    tooltip: Convidar jogador para esta casa
+    size: 100 30
+    icon-size: 100 30
+    icon: images/hospedes
+    icon-offset: 9 14
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 83
+    margin-left: 0
+    @onClick: g_game.talk("aleta sio")
+
+  UIButton
+    id: acessdoors
+    tooltip: Liberar Acesso a Portas
+    size: 100 30
+    icon-size: 100 30
+    icon: images/portas
+    icon-offset: 9 14
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 83
+    margin-left: 100
+    @onClick: g_game.talk("aleta grav")
+
+  UIButton
+    id: housesublider
+    tooltip: Sub Dono
+    size: 100 30
+    icon-size: 100 30
+    icon: images/subdono
+    icon-offset: 9 14
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 83
+    margin-left: 200
+    @onClick: g_game.talk("aleta som")
+
+  UIButton
+    id: leaveHouseBtnn
+    tooltip: Sair da Casa
+    size: 100 30
+    icon-size: 100 30
+    icon: images/abandonar
+    icon-offset: 9 14
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 43
+    margin-left: 200
+    @onClick: g_game.talk("!leavehouse")

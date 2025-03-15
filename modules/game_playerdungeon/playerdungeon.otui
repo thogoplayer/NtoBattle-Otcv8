@@ -1,0 +1,158 @@
+LevelLabel < UIButton
+  color: gray
+
+DungeonInvite < UIButton
+  size: 336 182
+  image-source: invite/background_invite.png
+  anchors.centerIn: parent
+
+DungeonAcceptInvite < UIButton
+  size: 336 182
+  image-source: invite/invited_background.png
+  anchors.centerIn: parent
+
+DungeonText < UITextEdit
+  font: verdana-11px-antialised
+  color: white
+  size: 86 20
+  text-offset: 0 3
+  padding: 3
+  image-border: 2
+  image-border-top: 3
+  image-border-bottom: 3
+  selection-color: #111416
+  selection-background-color: #999999
+  $disabled:
+    color: black
+
+MainWindow
+  id: dungeonWindow
+  font: sans-bold-16px
+  text: Dungeons
+  text-offset: 0 40
+  image-source: background.png
+  size: 930 516
+  anchors.centerIn: parent
+
+  UIButton
+    id: separator_text
+    image-source: separator.png
+    size: 336 32
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 32
+    margin-left: 276
+
+  Panel
+    id: levels_recommended
+    size: 390 15
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 77
+    margin-left: 275
+    layout:
+      type: horizontalBox
+      spacing: 30
+      flow: false
+
+  Panel
+    id: dificultys_recommended
+    size: 400 22
+    anchors.top: levels_recommended.top
+    anchors.left: levels_recommended.left
+    margin-top: 30
+    margin-left: -25
+    layout:
+      type: horizontalBox
+      spacing: 30
+      flow: false
+
+  ScrollablePanel
+    id: list_missions
+    size: 460 320
+    anchors.top: dificultys_recommended.top
+    anchors.left: dificultys_recommended.left
+    margin-top: 30
+    margin-left: -11
+    layout:
+      type: verticalBox
+      spacing: 30
+      flow: false
+    vertical-scrollbar: missionsScrollBar
+
+  VerticalScrollBar
+    id: missionsScrollBar
+    anchors.top: list_missions.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    margin-top: -30
+    margin-bottom: -1
+    margin-right: 182
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0
+
+  Panel
+    id: team_box
+    image-source: team_background.png
+    size: 211 415
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-left: 15
+    layout:
+      type: verticalBox
+      spacing: 30
+      flow: false
+
+  UIButton
+    id: criarTime_btn
+    image-source: add_team.png
+    size: 32 32
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-left: 103
+    margin-top: 322
+    opacity: 0.50
+    @onClick: addPlayersOnMyTeam()
+
+    $hover:
+      opacity: 100
+
+  Label
+    id: criarTime_lbl
+    font: sans-bold-16px
+    color: white
+    text-auto-resize: true
+    text: Criar Time
+    anchors.top: criarTime_btn.top
+    anchors.left: criarTime_btn.left
+    margin-top: 36
+    margin-left: -21
+    visible: false
+
+  UIButton
+    id: play_btn
+    image-source: play.png
+    size: 206 36
+    anchors.top: criarTime_lbl.top
+    anchors.left: criarTime_lbl.left
+    margin-top: 65
+    margin-left: -64
+    opacity: 0.50
+
+    $hover:
+      opacity: 100
+
+  Panel
+    id: necessary_items_container
+    size: 78 290
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 110
+    margin-left: 765
+    layout:
+      type: verticalBox
+      spacing: 30
+      flow: false
+    

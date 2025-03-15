@@ -1,0 +1,38 @@
+SpellButton < UIButton
+  width: 32
+  height: 32
+  focusable: false
+  image-color: white
+  image-size: 32 32
+  anchors.left: parent.left
+  anchors.top: parent.top
+
+  $!hover:
+    image-border: 3
+  $hover:
+    image-border: 2
+    image-color: #ffffff99
+  $pressed:
+    image-color: #999999
+  $disabled:
+    image-color: #ffffff66
+
+SpellProgressSpell < UIProgressRect
+  background: #585858AA
+  percent: 100
+  focusable: false
+  font: verdana-11px-rounded
+  color: green
+  anchors.left: parent.left
+  anchors.top: parent.top
+  size: 32 32
+
+UIWindow
+  focusable: false
+  Panel
+    id: mainWindow
+    size: 70 70
+    focusable: false
+    opacity: 0.95
+    image-source: /images/ui/window
+    anchors.fill: parent

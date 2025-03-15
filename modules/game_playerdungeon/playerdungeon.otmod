@@ -1,0 +1,9 @@
+Module
+  name: game_playerdungeon
+  description: Desafie monstros com jogadores na sua party.
+  author: Thalles Vitor
+  website: https://www.thallesdev.com
+  sandboxed: true
+  scripts: [ playerdungeon ]
+  @onLoad: init()
+  @onUnload: terminate()

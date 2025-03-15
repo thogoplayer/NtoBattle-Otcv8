@@ -1,0 +1,57 @@
+Panel
+  id: creatureBar
+  anchors.top: parent.top
+  anchors.horizontalCenter: parent.horizontalCenter
+  margin-top: 75
+  size: 400 75
+  phantom: true
+
+  Label
+    id: creatureName
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    font: sans-bold-16px
+    text-align: center
+    text-offset: 35 0
+    margin-top: 6
+    text-auto-resize: true
+
+  ProgressBar
+    id: special
+    anchors.centerIn: background
+    margin-top: 6
+    size: 370 30
+    image-source: /images/ui/bossbar_bg
+    percent: 1.0
+    background: red
+    visible: true
+
+  Panel
+    id: background
+    anchors.top: creatureName.bottom
+    anchors.left: parent.left
+    margin-top: 0
+    margin-left: 16
+    image-source: /images/ui/bossbar_border
+
+  Panel
+    id: creatureHP
+    anchors.centerIn: background
+    font: verdana-11px-rounded
+    text-align: center
+    margin-top: 6
+    text: 100%
+
+  Label
+    id: outfitBorder
+    size: 60 60
+    anchors.top: creatureName.bottom
+    anchors.left: parent.left
+    margin-top: 6
+    margin-left: -44
+    image-source: /images/ui/bossbar_outfit
+
+  UICreature
+    id: outfitBox
+    anchors.centerIn: outfitBorder
+    size: 50 50

@@ -1,0 +1,9 @@
+Module
+  name: game_playerdungeontime
+  description: Mostrar o tempo da dungeon
+  author: Thalles Vitor
+  website: https://www.thallesdev.com
+  sandboxed: true
+  scripts: [ playerdungeontime ]
+  @onLoad: init()
+  @onUnload: terminate()

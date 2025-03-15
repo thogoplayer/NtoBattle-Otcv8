@@ -1,0 +1,31 @@
+HeadlessWindow
+  id: timeWindow
+  image-source: background.png
+  size: 422 95
+  anchors.horizontalCenter: prev.horizontalCenter
+  anchors.top: parent.top
+  margin-top: 1
+  focusable: false
+  draggable: false
+
+  Label
+    id: time
+    text: 00:00:00
+    color: white
+    font: sans-bold-16px
+    text-auto-resize: true
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 20
+    margin-left: 205
+
+  Label
+    id: monsters
+    color: white
+    font: sans-bold-16px
+    text-auto-resize: true
+    text: 0/0
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 66
+    margin-left: 222

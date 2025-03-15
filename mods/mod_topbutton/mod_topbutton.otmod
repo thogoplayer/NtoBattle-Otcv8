@@ -1,0 +1,15 @@
+Module
+  name: mod_topbutton
+  description: Mod para simplificar a criação de botões no OTClient.
+  author: Hopus
+  website: none
+
+  autoload: true
+  autoload-priority: 1000
+  sandbox: true
+  
+  dependencies: [ client_topmenu ]
+
+  @onLoad: |
+    dofile 'mod_topbutton'
+    init()

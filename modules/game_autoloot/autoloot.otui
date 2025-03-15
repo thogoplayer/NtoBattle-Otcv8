@@ -1,0 +1,101 @@
+ItemName < Label
+  color: white
+  text-auto-resize: true
+  text-offset: 70 10
+
+ItemOption < Button
+  size: 20 20
+  color: white
+  text: +
+
+MainWindow
+  id: autoloot_window
+  text: Auto Loot
+  size: 415 320
+  anchors.centerIn: parent
+
+  ComboBox
+    id: options
+    size: 120 20
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: -6
+
+  TextEdit
+    id: pesquisar
+    size: 130 20
+    anchors.top: options.top
+    anchors.left: options.left
+    margin-left: 132
+
+  Button
+    id: power_on
+    text: OFF
+    size: 80 20
+    anchors.top: pesquisar.top
+    anchors.left: pesquisar.left
+    margin-left: 145
+
+  ScrollableFlatPanel
+    id: panel_loots
+    size: 246 224
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 25
+    padding-top: 5
+    layout:
+      type: grid
+      cell-size: 35 35
+      flow: false
+    vertical-scrollbar: panel_loots_scr
+
+  VerticalScrollBar
+    id: panel_loots_scr
+    anchors.top: panel_loots.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    margin-top: -1
+    margin-bottom: -1
+    margin-right: 124
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0
+
+  ScrollableFlatPanel
+    id: panel_loots_added
+    size: 78 225
+    anchors.top: power_on.top
+    anchors.left: power_on.left
+    margin-top: 30
+    margin-left: 2
+    padding-left: 21
+    padding-top: 5
+    layout:
+      type: grid
+      cell-size: 32 32
+      flow: false
+    vertical-scrollbar: panel_loots_added_scr
+
+  VerticalScrollBar
+    id: panel_loots_added_scr
+    anchors.top: panel_loots_added.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    margin-top: -1
+    margin-bottom: -1
+    margin-right: 13
+    step: 78
+    pixels-scroll: true
+      $!on:
+        width: 0
+
+  Button
+    id: close_button
+    text: Fechar
+    size: 70 20
+    anchors.top: panel_loots_added.top
+    anchors.left: panel_loots_added.left
+    margin-top: 235
+    margin-left: 44
+    @onClick: exibir()
